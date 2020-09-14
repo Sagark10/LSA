@@ -1,23 +1,23 @@
 Practical 2
-
+First write the add user name
 Command- adduser username
 
-Network Setting In Kali Linux
+For network setting in linux
 For IP Address
 Command- sudo ifconfig -a
 
 
-IP address and Netmask Network Configuration
+For IP address and Netmask Network Configuration the command is-
 Command- sudo ifconfig eth0 192.168.1.10 netmask 255.255.255.0
 
 
-Configure Services In Kali Linux
+Configure services in kali linux is
 Command :- service ssh start
 Command- ssh username@hostname
 
 
-Basic Command To Run , Enable , Start and Stop Services
-Command- systemctl [command] [service_name]
+Command To Run,Enable,Start and Stop Services
+Command- systemctl (command) (service_name)
 
 
 Then to stop and restart the service in Linux use the command
