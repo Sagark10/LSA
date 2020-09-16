@@ -1,0 +1,26 @@
+NFS is network  file system
+nfs is a distributed file system protocol
+nfs allows remote hosts to mout file system over a network and interact with file systems
+it is a server/client application
+
+
+Step 1- Installing NFS Server 
+Command- sudo apt-get -y install nfs-kernel-server
+
+Step 2- Create new directory and file
+Command- mkdir  demo_name
+
+Step 3- Open /etc/exports
+Command- sudo vi /etc/exports
+
+Step 4- Add line at end Of file
+Command- home/kali/demo_name 127.0.0.1(rw)
+
+Step 5- Use the below commnand so it create a table and records will be seen
+Command- sudo export -ra
+
+Step 6- Install nfs-common
+Command- sudo apt-get -y install nfs-common
+
+Step 7- Mount The File And Transfer To Other Directory
+Command- sudo mount -t nfs 127.0.0.1:[demo_name] [demo_name2]
