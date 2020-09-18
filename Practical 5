@@ -1,0 +1,88 @@
+SAMBA SERVER
+
+Samba server is the standard windows
+interoperability suite of programs for linux and Unix
+
+Samba us a software package that gives network administrators 
+flexibility and freedom in terms of setup, configuration
+
+
+1. smbd
+Command-
+sudo apt-get -y install samba
+sudo systemctl start smbd
+sudo systemctl status smbd
+
+2. nmbd
+Command-
+sudo systemctl start nmbd
+sudo systemctl status nmbd
+
+3. make a samba_shared directory in /home/shibu  
+
+4. make few txt files in /home/shibu/samba_shared
+Command-
+touch a.txt b.txt c.txt
+
+5.
+Command-
+
+cd /etc/samba
+ls /etc/samba
+
+6. backup of smb.conf 
+Command-
+cp smb.conf smb.conf_bkp 
+
+7. few configuration in /etc/smb.conf
+Command-
+sudo nano smb.conf
+
+8. delete all the things inside smb.conf and write:
+
+Command-
+    [samba_shared]
+	comment = Welcome to samba
+	path = /home/shibu/samba_shared
+	browseable = yes
+	read only = yes
+	guest ok = no
+
+9. download smbclient 
+Command-
+sudo apt-get -y install smbclient
+
+10. start services
+sudo systemctl start smbd
+sudo systemctl stop nmbd
+
+Check the status
+11. whoami
+
+12. sudo pdbedit -a -u $(whoami)
+
+13. sudo pdbedit -L (to check all users)
+
+14. make any connectionn possible to connect:
+Command-
+    $ sudo ufw allow from (your ip addr) any app Samba
+
+15. To check ip  
+Command-
+ip a 		(OR) 
+ip addr
+
+16. reload your firewall 
+Command-
+sudo ufw reload  
+
+17. whether it's working
+Command-
+sudo smbcllient -U <username> -L  //your ip
+
+18. smbd and nmbd services:
+Command-
+sudo systemctl restart smbd
+sudo systemctl restart nmbd
+
+19. check their status 
